@@ -1,0 +1,19 @@
+function [dpdt] = f(t,p)
+    dpdt = kgm*(1-(p/pmax))*p;
+endfunction;
+t0 = 1950; p0 = 2555; tn = 2000; h = 10;
+t = [t0:h:tn];
+p = ode("rk",y0,x0,x,f);
+disp("x   y");
+disp("--------");
+disp([x' y']);
+function z = fe(x)
+    z = 2.0*exp(sin(x)-sin(1));
+endfunction;
+xe = [x0:h/10:xn];
+n = length(xe);
+for i = 1:n
+    ye(i)=fe(xe(i));
+end;
+plot(x,y,'ro',xe,ye,'-b'); legend('RK4','Exact',3);
+xtitle('Solving dy/dx = y*cos(x)','x','y');

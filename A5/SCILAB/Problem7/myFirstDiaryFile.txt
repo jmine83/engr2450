@@ -1,0 +1,19 @@
+ ans  =
+ 
+    1.  
+ 
+-->function [y] = f04(x)
+-->y = sin(x) + sin(2*x) + cos(3*x);
+-->endfunction;
+ 
+-->TrapEq(100, -%pi/4, %pi/4, f04)
+ ans  =
+ 
+    0.4713173  
+ 
+-->Romberg(-%pi/4, %pi/4, 20, 10, f04)
+ ans  =
+ 
+    0.4641222  
+ 
+-->diary(0)

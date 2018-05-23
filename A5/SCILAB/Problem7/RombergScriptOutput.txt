@@ -1,0 +1,48 @@
+ ans  =
+ 
+    1.  
+-->//Example of a script file used to run function Romberg
+-->//Before running this program make sure that functions
+-->//TrapEq and Romberg are loaded
+-->//Case 1 --
+-->a = 0.5; b = 5.2; maxiter = 100; ea = 10; //ea in percent
+-->// define function to integrate as an inline function
+-->function [y]=f02(x)
+-->    y = 1/(1+x^2);
+-->endfunction;
+-->//Integrate using Romberg:
+-->[I1,n1,iter1,ea1] = Romberg(a,b,maxiter,ea,f02)
+ ea1  =
+ 
+    0.6015587  
+ iter1  =
+ 
+    2.  
+ n1  =
+ 
+    4.  
+ I1  =
+ 
+    0.9104462  
+-->//Case 2 --
+-->a = 1.5; b = 5.5; maxiter = 100; ea = 5; //ea in percent
+-->// define function to integrate as an inline function
+-->function [z]=f03(t)
+-->    z = 2.5*sin(0.5*t+%pi/6);
+-->endfunction;
+-->//Integrate using Romberg:
+-->[I2,n2,iter2,ea2] = Romberg(a,b,maxiter,ea,f03)
+ ea2  =
+ 
+    0.0395778  
+ iter2  =
+ 
+    2.  
+ n2  =
+ 
+    4.  
+ I2  =
+ 
+    6.4204645  
+-->//End of script
+-->diary(0)
